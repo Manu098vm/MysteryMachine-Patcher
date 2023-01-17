@@ -189,17 +189,20 @@ Result loadCode()
         u32 boss1_addr = 0;
         u32 boss2_addr = 0;
         u32 boss3_addr = 0;
-        if(tid_short == 0x00055E00 || 0x00055D00) { // Y || X
+        if(tid_short == 0x00055E00 || 0x00055D00) 
+        { // Y || X
             ser_addr = search_string("https://3ds1-fushigi.pokemon-gl.com/api/", 0x490000, 0x100000, paramblk->code_data);
             boss1_addr = search_string("https://npdl.cdn.nintendowifi.net/p01/nsa/%s/%s/%s", 0x490000, 0x100000, paramblk->code_data);
             boss2_addr = search_string("https://npfl.c.app.nintendowifi.net/p01/filelist/", 0x490000, 0x100000, paramblk->code_data);
         }
-        else if(tid_short == 0x0011C400 || 0x0011C500) { // OR || AS
+        else if(tid_short == 0x0011C400 || 0x0011C500) 
+        { // OR || AS
             ser_addr = search_string("https://3ds2-fushigi.pokemon-gl.com/api/", 0x4E0000, 0x100000, paramblk->code_data);
             boss1_addr = search_string("https://npdl.cdn.nintendowifi.net/p01/nsa/%s/%s/%s", 0x4E0000, 0x100000, paramblk->code_data);
             boss2_addr = search_string("https://npfl.c.app.nintendowifi.net/p01/filelist/", 0x4E0000, 0x100000, paramblk->code_data);
         }
-        else if(tid_short == 0x00164800 || 0x00175E00) // SUN || MOON
+        else if(tid_short == 0x00164800 || 0x00175E00)
+        { // SUN || MOON
             ser_addr = search_string("https://3ds3-fushigi.pokemon-gl.com/api/", 0x510000, 0x100000, paramblk->code_data);
             boss1_addr = search_string("https://npdl.cdn.nintendowifi.net/p01/nsa/%s/%s/%s", 0x510000, 0x100000, paramblk->code_data);
             boss2_addr = search_string("https://npfl.c.app.nintendowifi.net/p01/filelist/", 0x510000, 0x100000, paramblk->code_data);
